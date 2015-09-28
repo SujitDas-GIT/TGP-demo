@@ -1,0 +1,109 @@
+<apex:page sidebar="false" showChat="false" showHeader="false" standardStylesheets="false" docType="html-5.0" controller="VFC_Survey">
+    <html lang="en">
+        <head>
+            <title>Survey Form</title>
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <!-- loading stylesheets -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-responsive.min.css"/>
+            <link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.min.css"/>
+            <!-- loading stylesheets done-->
+            <!-- more styles -->
+            <style>
+                html {
+                    position: relative;
+                    min-height: 100%;
+                }
+                body {
+                /* Margin bottom by footer height, top margin for header, Adding background image */
+                    margin-bottom: 60px;
+                    margin-top:100px; 
+                    background-color:#303030;
+                    background-image:url("{!$Resource.backgroundimage}");
+                    background-repeat: no-repeat;
+                    background-position: right bottom;
+                    background-size: cover;
+                }
+                .footer {
+                /* sticky footer */
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                /* Set the fixed height of the footer here */
+                height: 60px;
+                background-color: #f5f5f5;
+                }
+            </style>
+            <!-- end style -->
+        </head>
+        <!-- end head -->
+        <!-- body -->
+        <body>
+            <!-- apex form -->
+            <apex:form >
+                <div class="navbar-fixed-top"> <!-- Fixed Nav bar -->
+                    <div class="container-fluid col-sm-3 bg-primary">
+                        <apex:image url="{!$Resource.bikelogo}" style="max-width:300px; padding-top:5px; padding-bottom:5px;"/>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <h1>
+                                <b>
+                                    <kbd>Customer Survey</kbd> <!-- Page Header -->
+                                </b>
+                            </h1>
+                            <form class="form-horizontal col-sm-6" role="form">
+                                <div class="form-group">
+                                    <!-- Customer name : required field -->
+                                    <label class="control-label" for="Name">
+                                        <h3>
+                                            <kbd>Name:</kbd>
+                                        </h3>
+                                    </label>
+                                    <apex:inputField value="{!newSurvey.Customer_Name__c}" styleClass="form-control"/>
+                                </div>
+                                <div class="form-group">
+                                    <!-- Customer Address : required field -->
+                                    <label class="control-label" for="Name">
+                                        <h3>
+                                            <kbd>Address:</kbd>
+                                        </h3>
+                                    </label>
+                                    <apex:inputField value="{!newSurvey.Address__c}" styleClass="form-control"/>
+                                </div>
+                                <div class="form-group">
+                                    <label  class="control-label">
+                                        <h3>
+                                            <kbd>Customer Type:</kbd>
+                                        </h3>
+                                    </label>
+                                    <apex:inputField value="{!newSurvey.Customer_Type__c}" styleClass="form-control"/>
+                                </div>
+                                <div class="form-group">
+                                    <div style="padding-bottom:50px;">
+                                        <!-- redirect to next page -->
+                                        <apex:commandButton action="{!secondPage}" value="Next" styleClass="btn btn-default"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> <!-- end apex:form -->
+                <!-- Footer start -->
+                <footer class="footer ">
+                    <div class="container">
+                        <p class="text-danger col-sm-offset-3">&copy; Designed by Tquila Motorbikes Pvt. Ltd.</p>
+                    </div>
+                </footer>
+                <!-- Footer start -->
+                <!-- Load scripts at the bottom for faster page load-->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+                <!-- script load end -->
+            </apex:form>
+            <!-- end apex:form -->
+        </body>
+    </html>
+</apex:page>

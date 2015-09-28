@@ -1,0 +1,71 @@
+<apex:page sidebar="false" showChat="false" showHeader="false" standardStylesheets="false" docType="html-5.0" controller="VFC_Survey">
+    <html lang="en">
+        <head>
+            <title>Survey Form</title>
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/> -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-responsive.min.css"/>
+            <link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.min.css"/>
+            <style>
+  html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  margin-top:100px;
+  background-color:#303030;
+  background-image:url("{!$Resource.backgroundimage}");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: cover;
+
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+  </style>
+        </head>
+        <body >
+            <apex:form >
+                <div class="navbar-fixed-top">
+                    <div class="container-fluid col-sm-3 bg-primary">
+                        <apex:image url="{!$Resource.bikelogo}" style="max-width:300px; padding-top:5px; padding-bottom:5px;"/>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <h1>
+                                <b>
+                                    <kbd>Customer Survey Complete</kbd>
+                                </b>
+                            </h1>
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="control-label alert-warning">
+                                        <h2>{!newSurvey.Customer_Name__c}, your response has been recorded. Thanks for your time.</h2>
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer ">
+                    <div class="container">
+                        <p class="text-danger col-sm-offset-3">&copy; Designed by Tquila Motorbikes Pvt. Ltd.</p>
+                    </div>
+                </footer>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+            </apex:form>
+        </body>
+    </html>
+</apex:page>
